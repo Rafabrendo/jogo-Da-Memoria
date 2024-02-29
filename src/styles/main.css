@@ -1,0 +1,83 @@
+@charset "UTF-08";
+
+@import url(variaveis.css);
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fc1e8a;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, 
+    #03001e 0%,
+    #7303c0 30%,
+    #fc1e8a 70%,
+    #fdeff9 100%
+    );
+    padding: 40px 60px;
+}
+
+h2{
+    font-size: 2.5em;
+    color: var(--cor0);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset{
+    padding: 15px 20px;
+    width: 100%;
+    color: var(--cor1);
+    border: none;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer; 
+    /* Para quaando eu passar o cursor, mude de cursor seta para mão */
+    font-weight: 600;
+}
+
+.reset:hover{
+    background: linear-gradient(325deg, 
+    #03001e 0%,
+    #7303c0 30%,
+    #fc1e8a 70%,
+    #fdeff9 100%
+    );
+}
+
+.reset:focus{
+    color: #fc1e8a;
+    background: black;
+}
+
+.game{
+    border: 1px solid red;
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Toda vez q o elemento ultrapassar uma linha, ele vai quebrar e ser realocado */
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor0);
+}
