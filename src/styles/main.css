@@ -8,6 +8,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background: #fc1e8a;
+    user-select: none;
+    /*Para não poder selecionar o elemento*/
 }
 
 .container{
@@ -44,6 +46,8 @@ h2{
     cursor: pointer; 
     /* Para quaando eu passar o cursor, mude de cursor seta para mão */
     font-weight: 600;
+
+   
 }
 
 .reset:hover{
@@ -80,4 +84,33 @@ h2{
     align-items: center;
     justify-content: center;
     background-color: var(--cor0);
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+    
+}
+
+/* Vai criar um conteudo depois da minha classe item */
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    /* vai esconder o outro card */
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+    /* A parte "preta" do item não vai ser mexida */
+}
+
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotateY(180deg);
+    /* a que tiver a classe boxOpen vai ser mexida */
+
 }
